@@ -20,7 +20,7 @@ var Tile = React.createClass({
     this.setState({
       swappable: !this.state.swappable
     });
-    console.log(this.state.swappable);
+    console.log('Tile is swappable:', this.state.swappable);
   },
 
   // Method used to toggle parenthesizable state.
@@ -28,7 +28,7 @@ var Tile = React.createClass({
     this.setState({
       parenthesizable: !this.state.parenthesizable
     });
-    console.log('parenthesis: ' + this.state.parenthesizable);
+    console.log('Tile is parenthesizable: ' + this.state.parenthesizable);
   },
 
   render: function() {

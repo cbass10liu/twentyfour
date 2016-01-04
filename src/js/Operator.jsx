@@ -1,4 +1,5 @@
 import React from 'react';
+import Event from './event.js';
 
 var Operator = React.createClass({
 
@@ -14,9 +15,11 @@ var Operator = React.createClass({
   cycleOperator: function() {
     var currentOperatorIndex = this.getCurrentOperatorIndex(this.state.operator);
     var nextOperatorIndex = (currentOperatorIndex + 1) % (this.getPossibleOperators().length);
+    var newOperator = (this.getPossibleOperators())[nextOperatorIndex];
     this.setState({
-      operator: (this.getPossibleOperators())[nextOperatorIndex]
+      operator: newOperator
     });
+    Event.trigger('24.operator.changed', newOperator);
   },
 
   // Returns a list of possible operators.
